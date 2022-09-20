@@ -1,0 +1,13 @@
+.imgGenre {
+    display: block;
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
