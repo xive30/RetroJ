@@ -18,7 +18,7 @@ export default function Genre() {
 
     const handleGenre = (e) => {
         setGenreId(e.target.id);
-        // console.log({genreId});
+        console.log({genreId});
     }
 
     return (

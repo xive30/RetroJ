@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Styles from '../styles/genre.module.css'
+import JeuDetail from "./JeuDetail";
 
 export default function JeuxParGenre(genreId) {
   // console.log(genreId.genreId);
@@ -19,7 +20,7 @@ export default function JeuxParGenre(genreId) {
     const gamesByGenres = await res.json();
     // console.log(gamesByGenres);
     setSelectionJeu(gamesByGenres);
-    console.log(selectionJeu.results);
+    // console.log(selectionJeu.results);
   }
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function JeuxParGenre(genreId) {
 
   const handleGames = (e) => {
     setGameId(e.target.id);
-    console.log({ gameId });
+    // console.log({ gameId });
   }
 
   return (
@@ -43,6 +44,7 @@ export default function JeuxParGenre(genreId) {
           </div>
         ))}
       </div>
+      <JeuDetail gameId={gameId} />
     </>
   );
 }
