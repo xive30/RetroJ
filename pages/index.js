@@ -2,8 +2,14 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Header from '../componants/Header'
 import Genre from '../componants/Genre'
+import { useState } from 'react';
+import JeuxParGenre from '../componants/JeuxParGenre';
+import JeuDetail from "../componants/JeuDetail";
 
 export default function Home() {
+
+  const [genreId, setGenreId] = useState(0);
+  const [gameId, setGameId] = useState();
 
   return (
     <div className={styles.container}>
@@ -14,8 +20,16 @@ export default function Home() {
       </Head>
 
       <Header />
-      <Genre />
-
+      {
+        (genreId == 0) 
+        ?
+        <Genre setGenreId={setGenreId}  /> 
+        : 
+        (gameId) ?
+        <JeuDetail gameId={gameId} />
+        :
+        <JeuxParGenre genreId={genreId} setGameId={setGameId} />
+      }
 
     </div>
   )

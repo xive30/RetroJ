@@ -1,7 +1,11 @@
 .container {
   padding: 0 2rem;
 }
-
+/* 
+.aside {
+  width: 20vw;
+  background-color: #6441A5;
+} */
 .main {
   min-height: 100vh;
   padding: 4rem 0;
