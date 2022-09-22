@@ -25,12 +25,12 @@ export default function Home() {
         ?
         <Genre setGenreId={setGenreId}  /> 
         : 
-        (gameId) ?
-        <JeuDetail gameId={gameId} />
-        :
         <JeuxParGenre genreId={genreId} setGameId={setGameId} />
       }
-
+      {(gameId == 0) ?
+      <div></div> :
+      <JeuDetail gameId={gameId} />
+      }
     </div>
   )
 }
